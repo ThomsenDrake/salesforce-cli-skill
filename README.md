@@ -121,4 +121,4 @@ The skill encodes a few hard-won conventions for agents:
 
 ## License
 
-No license file is currently included. Add one if you intend others to reuse this work.
+Released under the [MIT License](LICENSE).
