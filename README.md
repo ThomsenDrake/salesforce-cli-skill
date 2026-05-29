@@ -71,19 +71,21 @@ npx openskills sync
 
 Add `--global` to the `install` command to make it available across all projects.
 
-### Manual
+### Manual (Mistral Vibe)
 
-Copy the skill directory into your agent's skills folder:
+Copy the skill directory into one of Mistral Vibe's skill folders:
 
 ```bash
 git clone https://github.com/ThomsenDrake/salesforce-cli-skill.git
 
-# Claude Code (project-local)
-cp -R salesforce-cli-skill/skills/salesforce-cli ./.claude/skills/salesforce-cli
+# Project-local
+cp -R salesforce-cli-skill/skills/salesforce-cli ./.vibe/skills/salesforce-cli
 
-# Claude Code (user-global)
-cp -R salesforce-cli-skill/skills/salesforce-cli ~/.claude/skills/salesforce-cli
+# User-global
+cp -R salesforce-cli-skill/skills/salesforce-cli ~/.vibe/skills/salesforce-cli
 ```
+
+Mistral Vibe discovers any directory containing a `SKILL.md`. In addition to the `.vibe/skills/` paths above, it also reads the standard Agent Skills locations — `.agents/skills/` (project) and `~/.agents/skills/` (global) — so you can install there instead.
 
 ## Usage
 
