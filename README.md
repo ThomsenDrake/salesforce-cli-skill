@@ -1,6 +1,6 @@
 # Salesforce CLI Skill
 
-A [Claude Agent Skill](https://code.claude.com/docs/en/skills) that gives coding agents a comprehensive, battle-tested reference for operating the **Salesforce CLI (`sf`)** from the command line.
+An [Agent Skill](https://agentskills.io/home) that gives coding agents a comprehensive, battle-tested reference for operating the **Salesforce CLI (`sf`)** from the command line. It follows the open Agent Skills standard, so it works with any skills-compatible agent — Claude Code, Cursor, Codex, Gemini CLI, OpenCode, GitHub Copilot, and [many more](https://agentskills.io/clients).
 
 It covers authentication, SOQL/SOSL queries, record CRUD, bulk data operations, metadata deployment/retrieval, org management, Apex execution, schema inspection, reports, and raw REST/GraphQL API calls — with an execution-first operating protocol designed to keep agents from flailing between Salesforce interfaces.
 
@@ -48,29 +48,42 @@ sf version
 
 ## Installation
 
-This repo follows the Agent Skills layout, so the skill is at `skills/salesforce-cli/`.
+The skill lives at `skills/salesforce-cli/`, following the open Agent Skills layout. Pick whichever installer matches your workflow.
 
-### Claude Code (manual)
+### Using the `skills` CLI ([agentskills.io](https://agentskills.io/home))
 
-Copy the skill into your skills directory:
+The `skills` CLI auto-detects which coding agents you have installed and syncs the skill to each.
 
 ```bash
-# Project-local
-git clone https://github.com/ThomsenDrake/salesforce-cli-skill.git
-cp -R salesforce-cli-skill/skills/salesforce-cli ./.claude/skills/salesforce-cli
+# Install into the current project
+npx skills add ThomsenDrake/salesforce-cli-skill
 
-# Or user-global
-cp -R salesforce-cli-skill/skills/salesforce-cli ~/.claude/skills/salesforce-cli
+# Or install globally for all projects
+npx skills add ThomsenDrake/salesforce-cli-skill -g
 ```
 
-### Via `openskills` (universal installer)
+### Using the `openskills` CLI
 
 ```bash
 npx openskills install ThomsenDrake/salesforce-cli-skill
 npx openskills sync
 ```
 
-Add `--global` to install for all projects.
+Add `--global` to the `install` command to make it available across all projects.
+
+### Manual
+
+Copy the skill directory into your agent's skills folder:
+
+```bash
+git clone https://github.com/ThomsenDrake/salesforce-cli-skill.git
+
+# Claude Code (project-local)
+cp -R salesforce-cli-skill/skills/salesforce-cli ./.claude/skills/salesforce-cli
+
+# Claude Code (user-global)
+cp -R salesforce-cli-skill/skills/salesforce-cli ~/.claude/skills/salesforce-cli
+```
 
 ## Usage
 
